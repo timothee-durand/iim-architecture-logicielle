@@ -20,13 +20,13 @@ function App() {
     for (var x = 0; x < columns; x++)
       drops[x] = 1;
 
-    const colors = ['#CE362B']; // Exemple de couleurs
+    const colors = ['#31C9D4']; // Exemple de rouge '#CE362B'
 
     function draw() {
       for (var i = 0; i < drops.length; i++) {
         var text = chinese[Math.floor(Math.random() * chinese.length)];
-        var color = colors[Math.floor(Math.random() * colors.length)]; // Sélection aléatoire
-        matrix.fillStyle = color; // Utilisation de la couleur sélectionnée
+        var color = colors[Math.floor(Math.random() * colors.length)]; 
+        matrix.fillStyle = color; 
         matrix.fillText(text, i * font_size, drops[i] * font_size);
       }
       matrix.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -37,7 +37,7 @@ function App() {
         var text = chinese[Math.floor(Math.random() * chinese.length)];
         matrix.fillText(text, i * font_size, drops[i] * font_size);
 
-        if (drops[i] * font_size > canvas.height && Math.random() > 0.985)
+        if (drops[i] * font_size > canvas.height && Math.random() > 0.980)
           drops[i] = 0;
         drops[i]++;
       }
@@ -50,7 +50,9 @@ function App() {
   return (
     <>
       <canvas id="c"></canvas>
-      {/* Reste du composant */}
+      {
+        <div>test</div>
+      }
     </>
   );
 }

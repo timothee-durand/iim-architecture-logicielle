@@ -1,3 +1,29 @@
+/* Assurez-vous que le body n'a pas de marge pour que le canvas puisse couvrir toute la page */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Cache les barres de défilement si le canvas dépasse */
+}
+
+/* Styles pour le canvas */
+#c {
+  position: fixed; /* Ou 'absolute' si nécessaire */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place le canvas derrière d'autres contenus */
+}
+
+/* Styles pour le contenu qui doit apparaître au-dessus du canvas */
+.content {
+  position: relative; /* Assurez-vous que cela a un z-index supérieur si nécessaire */
+  z-index: 2; /* Plus élevé que le canvas */
+  /* D'autres styles pour votre contenu ici (couleur, marge, etc.) */
+}
+
+
+
 * {
   box-sizing: border-box;
 }
