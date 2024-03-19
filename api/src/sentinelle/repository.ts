@@ -1,6 +1,9 @@
 import { PostgreClient } from '../services/PostgreClient';
 import { BriefHistory } from './validator';
 
+/**
+ * Initialize the database connection and create table if don't exist
+ */
 export async function initBriefHistoryTable() : Promise<void> {
   const { client } = PostgreClient.getInstance();
   await client.query(`
@@ -14,6 +17,10 @@ export async function initBriefHistoryTable() : Promise<void> {
   `);
 }
 
+/**
+ * Save the brief history into the database
+ * @param brief BriefHistory
+ */
 export async function saveBriefHistory(brief: Omit<BriefHistory, 'creationDate' | 'id'>): Promise<void> {
   const { client } = PostgreClient.getInstance();
   await client.query(`
@@ -22,6 +29,9 @@ export async function saveBriefHistory(brief: Omit<BriefHistory, 'creationDate' 
   `, [brief.news, new Date().toISOString(), JSON.stringify(brief.brief)]);
 }
 
+/**
+ * List all the brief history from the database
+ */
 export async function listBriefHistory(): Promise<BriefHistory[]> {
   const { client } = PostgreClient.getInstance();
   const result = await client.query<BriefHistory>(`

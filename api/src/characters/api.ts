@@ -2,9 +2,13 @@ import { Router } from 'express';
 import { createCharacter, deleteCharacter, getCharacter, listCharacters, updateCharacter } from './repository';
 import { characterValidator } from './validators';
 
-export const charactersRouter = Router();
+// router for the characters api
+// base path: /characters
+export const charactersApi = Router();
 
-charactersRouter.get('/', async (req, res) => {
+// GET /characters
+// List all the characters from the database
+charactersApi.get('/', async (req, res) => {
   try {
     const characters = await listCharacters()
     res.send(characters);
@@ -14,7 +18,9 @@ charactersRouter.get('/', async (req, res) => {
   }
 });
 
-charactersRouter.get('/:id', async (req, res) => {
+// GET /characters/:id
+// Get a character from the database
+charactersApi.get('/:id', async (req, res) => {
   try {
     console.log(req.params.id);
     const character = await getCharacter(req.params.id);
@@ -26,7 +32,9 @@ charactersRouter.get('/:id', async (req, res) => {
   }
 });
 
-charactersRouter.post('/', async (req, res) => {
+// POST /characters
+// Save the character into the database
+charactersApi.post('/', async (req, res) => {
   try {
     const character = characterValidator.parse(req.body);
     await createCharacter(character);
@@ -37,7 +45,9 @@ charactersRouter.post('/', async (req, res) => {
   }
 });
 
-charactersRouter.put('/:id', async (req, res) => {
+// PUT /characters/:id
+// Update the character in the database
+charactersApi.put('/:id', async (req, res) => {
   try {
     const character = characterValidator.parse(req.body);
     await updateCharacter(req.params.id, character);
@@ -48,7 +58,9 @@ charactersRouter.put('/:id', async (req, res) => {
   }
 })
 
-charactersRouter.delete('/:id', async (req, res) => {
+// DELETE /characters/:id
+// Delete the character from the database
+charactersApi.delete('/:id', async (req, res) => {
   try {
     await deleteCharacter(req.params.id);
     res.status(204).send(undefined);

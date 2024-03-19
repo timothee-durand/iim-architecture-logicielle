@@ -1,22 +1,34 @@
-import express from 'express';
-import { charactersRouter } from './characters';
+import express, { Request, Response } from 'express';
+import { charactersApi } from './characters';
 import { sentinelleApi } from './sentinelle';
 
+
+/**
+ * Log all requests to the console
+ */
+function logRequests(req: Request, res: Response, next: () => void) {
+  console.log(req.method, req.url);
+  next();
+}
+
+/**
+ * Initialize the API
+ */
 export async function initApi() {
   const app = express();
   const port = process.env.PORT || 3000;
 
-  app.use((req, res, next) => {
-    console.log(req.method, req.url);
-    next();
-  });
+  // Log all requests
+  app.use(logRequests);
 
+  // Parse JSON bodies
   app.use(express.json());
 
-// respond with "hello world" when a GET request is made to the homepage
-  app.use('/characters', charactersRouter)
-  app.use('/sentinelle', sentinelleApi)
+  // Add the routes
+  app.use('/characters', charactersApi);
+  app.use('/sentinelle', sentinelleApi);
 
+  // Start the server
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
   });

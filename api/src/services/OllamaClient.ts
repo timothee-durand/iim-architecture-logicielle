@@ -1,7 +1,13 @@
 import { Ollama } from 'ollama';
 
+/**
+ * OllamaClient
+ * Singleton class to handle the Ollama client
+ */
 export class OllamaClient {
+  // Singleton instance
   private static instance: OllamaClient;
+  // The Ollama client
   private client: Ollama;
 
   private constructor() {
@@ -23,7 +29,6 @@ export class OllamaClient {
    * Take the message in parameter and return the response from Ollama as a string
    * @param message string
    */
-
   public async chat(message:string): Promise<string> {
     const result = await OllamaClient.getInstance().client.chat({
       messages: [
