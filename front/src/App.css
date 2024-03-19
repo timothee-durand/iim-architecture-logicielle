@@ -1,38 +1,35 @@
-/* Assurez-vous que le body n'a pas de marge pour que le canvas puisse couvrir toute la page */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Cache les barres de défilement si le canvas dépasse */
+.nav_container {
+  background-color: #CE362B;
+  width: 100%;
+  padding: 0px 50px;
+  font-family: 'Bebas Neue';
+  font-size: 24px;
+  letter-spacing: 1px;
 }
 
-/* Styles pour le canvas */
+nav ul li a {
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  padding: 15px 25px;
+}
+
 #c {
-  position: fixed; /* Ou 'absolute' si nécessaire */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Place le canvas derrière d'autres contenus */
+  z-index: -1;
 }
 
-/* Styles pour le contenu qui doit apparaître au-dessus du canvas */
 .content {
-  position: relative; /* Assurez-vous que cela a un z-index supérieur si nécessaire */
-  z-index: 2; /* Plus élevé que le canvas */
-  /* D'autres styles pour votre contenu ici (couleur, marge, etc.) */
+  position: relative;
+  z-index: 2;
 }
-
-
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  color: #000;
-  font-size: 80%;
 }
 
 canvas {
@@ -55,22 +52,89 @@ canvas {
   padding: 10px;
 }
 
-
-#root {
-  text-align: center;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  
+  a:hover {
+    color: #747bff;
+  }
+  
+  button {
+    background-color: #f9f9f9;
+  }
 }
 
 @keyframes logo-spin {
