@@ -8,7 +8,7 @@ const Menu: React.FC = () => {
       <ul style={{ listStyleType: 'none', padding: 0, margin : 0, }}>
         <li style={{ display: 'inline-block', marginRight: 10 }}>
           <NavLink to="/" style={({ isActive }) => ({ background: isActive ? 'white' : '', color: isActive ? 'red' : 'white' })}>
-            Accueil
+            Home
           </NavLink>
         </li>
         <li style={{ display: 'inline-block', marginRight: 10 }}>
