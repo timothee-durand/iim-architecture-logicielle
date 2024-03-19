@@ -1,0 +1,1 @@
+export {sentinelleApi} from './api'
