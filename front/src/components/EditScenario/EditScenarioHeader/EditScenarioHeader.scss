@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .editScenarioHeader {
   &-container {
@@ -11,7 +11,8 @@
     width: calc(100% - 32px);
   }
 
-  &-anectode, &-agentNumber{
+  &-anectode,
+  &-agentNumber {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -19,11 +20,11 @@
     width: 30%;
     &__label {
       text-transform: uppercase;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: "Bebas Neue", sans-serif;
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 8px;
-      color: #FFF;
+      color: #fff;
     }
 
     &__selector {
@@ -32,11 +33,13 @@
       padding: 0 16px;
       font-size: 1rem;
       font-weight: 700;
-      color: #FFF;
+      color: #fff;
       background-color: transparent;
       border: 2px solid #ff0000;
       outline: none;
+      option{
+        color: #000;
+      }
     }
   }
-
 }

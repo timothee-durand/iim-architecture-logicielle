@@ -24,24 +24,42 @@ const EditScenarioBody: React.FC<GeneratedScenarioProps> = ({
     return (
       <div className="scenarioBody">
         <h2>Title: {theScenario.title ?? ""}</h2>
-        <h3>Contexte:</h3>
-        <p>{theScenario.contexte ?? ""}</p>
-        <h3>Objectives:</h3>
-        <p>{theScenario.objectives ?? ""}</p>
-        <h3>Stakes:</h3>
-        <p>{theScenario.stakes ?? ""}</p>
-        <h3>Enemis:</h3>
-        <p>{theScenario.enemis ?? ""}</p>
-        <h3>Allies:</h3>
-        <p>{theScenario.allies ?? ""}</p>
-        <h3>Ressources:</h3>
-        <p>{theScenario.ressources ?? ""}</p>
-        <h3>Constraints:</h3>
-        <p>{theScenario.constraints ?? ""}</p>
-        <h3>Rewards:</h3>
-        <p>{theScenario.rewards ?? ""}</p>
-        <h3>Steps:</h3>
-        <p>{theScenario.steps ?? ""}</p>
+        <div>
+          <h3>Context:</h3>
+          <p>{theScenario.context ?? ""}</p>
+        </div>
+        <div>
+          <h3>Objectives:</h3>
+          <p>{theScenario.objectives ?? ""}</p>
+        </div>
+        <div>
+          <h3>Stakes:</h3>
+          <p>{theScenario.stakes ?? ""}</p>
+        </div>
+        <div>
+          <h3>Enemies:</h3>
+          <p>{theScenario.enemies.map((enemy) => enemy.name).join(", ")}</p>
+        </div>
+        <div>
+          <h3>Allies:</h3>
+          <p>{theScenario.allies.map((ally) => ally.name).join(", ")}</p>
+        </div>
+        <div>
+          <h3>Resources:</h3>
+          <p>{theScenario.resources ?? ""}</p>
+        </div>
+        <div>
+          <h3>Constraints:</h3>
+          <p>{theScenario.constraints ?? ""}</p>
+        </div>
+        <div>
+          <h3>Rewards:</h3>
+          <p>{theScenario.rewards ?? ""}</p>
+        </div>
+        <div>
+          <h3>Stages:</h3>
+          <p>{theScenario.stages.join(", ")}</p>
+        </div>
       </div>
     );
   }
