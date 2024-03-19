@@ -1,5 +1,6 @@
 import express from 'express';
 import { charactersRouter } from './characters';
+import { sentinelleApi } from './sentinelle';
 
 export async function initApi() {
   const app = express();
@@ -14,6 +15,7 @@ export async function initApi() {
 
 // respond with "hello world" when a GET request is made to the homepage
   app.use('/characters', charactersRouter)
+  app.use('/sentinelle', sentinelleApi)
 
   app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

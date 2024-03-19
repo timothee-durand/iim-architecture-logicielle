@@ -3,13 +3,18 @@
 ## Setup api
 1 - Run docker
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
-2 - Install dependencies and run the server
+2 - Install [Ollama](https://github.com/ollama/ollama) and pull mistral model (i'm not using the docker image, its way too slow)
+```bash
+ollama pull mistral
+```
+
+3 - Install dependencies and run the server
 ```bash
 pnpm install
-pnpm run dev
+pnpm dev
 ```
 
 ## Endpoints
@@ -28,3 +33,6 @@ Update a character by id
 
 ### DELETE /characters/:id
 Delete a character by id
+
+### POST /sentinelle
+Generate a mission brief from a news article
