@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .editScenarioHeader {
   &-container {
     display: flex;
@@ -14,7 +16,10 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
+    width: 30%;
     &__label {
+      text-transform: uppercase;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 8px;
