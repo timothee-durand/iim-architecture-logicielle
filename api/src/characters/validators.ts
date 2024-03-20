@@ -4,7 +4,7 @@ import { z } from 'zod';
 // also used to type the data in the database
 export const characterValidator = z.object({
   name: z.string(), // name of the character
-  description: z.string(), // description of the character
+  profession: z.string(), // description of the character
   clearance: z.string(), // clearance of the character (public, secret, top secret)
   physical: z.array(z.string()), // physical characteristics of the character
   mental: z.array(z.string()), // mental characteristics of the character
