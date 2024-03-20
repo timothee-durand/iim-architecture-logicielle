@@ -1,0 +1,30 @@
+.edit-scenario-container {
+  height: 80vh;
+  margin-top: 2vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.edit-scenario-main {
+  width: 55%;
+  height: 75%;
+}
+
+.side-bar-container{
+  width: 15%;
+}
+
+.start-scenario {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 1vh;
+  padding: 1vh;
+  width: 20%;
+  height: 100%;
+  background-image: url("../../assets/CardScenario.png");
+}
+

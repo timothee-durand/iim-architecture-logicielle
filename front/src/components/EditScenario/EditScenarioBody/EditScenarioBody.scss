@@ -1,0 +1,13 @@
+.scenario-body {
+  font-family: "Courier New", monospace, Arial, sans-serif;
+  height: 100%;
+  overflow-y: scroll;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: '- ';
+  }
+}
