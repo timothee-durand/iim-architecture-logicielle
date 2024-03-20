@@ -12,7 +12,6 @@ const ModelViewer: React.FC = () => {
     
     // Paramètre la caméra
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    
     // Crée le renderer avec fond transparent
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     const canvasWidth = 800; // Largeur du canvas
@@ -20,6 +19,8 @@ const ModelViewer: React.FC = () => {
     renderer.setSize(canvasWidth, canvasHeight);
     camera.aspect = canvasWidth / canvasHeight;
     camera.updateProjectionMatrix();
+    //set target to the center of the scene
+    camera.lookAt(0, 0, 0);
 
     // Ajoute le renderer au DOM
     mountRef.current?.appendChild(renderer.domElement);
@@ -29,7 +30,7 @@ const ModelViewer: React.FC = () => {
     scene.add(ambientLight);
     
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(0, 1, 1);
+    directionalLight.position.set(0, 1, 3);
     scene.add(directionalLight);
 
     // Charge le modèle 3D
@@ -47,7 +48,7 @@ const ModelViewer: React.FC = () => {
     );
 
     // Positionne la caméra
-    camera.position.set(0, 1.5, 3);
+    camera.position.set(0.5, 1, 1.5);
 
     // Boucle d'animation
     const animate = function () {
@@ -55,7 +56,7 @@ const ModelViewer: React.FC = () => {
 
       // Fait tourner le modèle sur lui-même autour de l'axe Y
       if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01;
+        modelRef.current.rotation.y += 0.001;
       }
 
       renderer.render(scene, camera);
@@ -68,7 +69,7 @@ const ModelViewer: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '800px', height: '600px' }} />;
+  return <div ref={mountRef} style={{display:"flex", justifyItems: "center", alignItems:"center"}}/>;
 };
 
 export default ModelViewer;

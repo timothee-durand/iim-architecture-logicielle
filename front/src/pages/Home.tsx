@@ -30,8 +30,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Placez Model3D à l'extérieur de la div principale mais à l'intérieur du fragment */}
-      <Model3D />
+
     </>
   );
 };

@@ -5,6 +5,7 @@ import "./PlayerSelection.scss";
 import StatDetail from "../components/statDetail/StatDetail.tsx";
 import StatPanel from "../components/statPanel/StatPanel.tsx";
 import RecapPanel from "../components/recapPanel/RecapPanel.tsx";
+import Model3D from "../components/Model3D.tsx";
 
 
 
@@ -33,6 +34,7 @@ const PlayerSelection: React.FC = () => {
             <ProgressCreation currentStep={currentStep} />
             <ComponentToRender />
             {currentStep !== 3 && <StatDetail />}
+            <Model3D />
             <button className="playerSelection__nextButton" onClick={handleNextStep}>Next step</button>
             <button className="playerSelection__prevButton" onClick={handlePrevStep}>Prev step</button>
         </div>
