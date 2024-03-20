@@ -5,18 +5,21 @@ import Home from '../pages/Home';
 import Menu from '../components/menu/Menu';
 import ScenarioSelection from '../pages/Scenarioselection';
 import PlayerSelection from '../pages/PlayerSelection';
+import Comingsoon from '../pages/Comingsoon';
 
 const AppContent: React.FC = () => {
   const location = useLocation(); // Obtenez le chemin actuel
 
   return (
     <>
-      {location.pathname !== "/" && <Menu />}
+      {!['/', '/start'].includes(location.pathname) && <Menu />}
+
       {/* Non affichage du menu dans l'accueil */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/scenario" element={<ScenarioSelection />} />
         <Route path="/player" element={<PlayerSelection />} />
+        <Route path="/start" element={<Comingsoon />} />
       </Routes>
     </>
   );

@@ -41,6 +41,23 @@ nav ul li a {
   background: #000;
 }
 
+.comingsoon_container{
+  color: white;
+}
+
+.comingsoon_container h1{
+  text-transform: uppercase;
+  font-family: 'Bebas Neue';
+  margin-bottom: 0;
+  font-size: 100px;
+}
+
+.comingsoon_container p {
+  font-family: 'Bebas Neue';
+  margin-bottom: 0;
+  text-align: center;
+}
+
 .box {
   width: 400px;
   height: 50px;

@@ -21,7 +21,7 @@ const Home: React.FC = () => {
               <p>Create your scenario using AI, based on the AFP dispatch</p>
             </div>
           </Link>
-          <Link to="/" className='cards card3'>
+          <Link to="/start" className='cards card3'>
             <div className='cardcontainercontent'>
               <img src={RightArrow} alt="Start the game" />
               <h3 className='cardstitle'>start the game</h3>
