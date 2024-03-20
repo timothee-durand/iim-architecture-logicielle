@@ -2,6 +2,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+/**
+ * Menu component is responsible for rendering a navigation menu.
+ * The menu includes links to the "Home", "player Creation", and "Scenario Creation" pages.
+ * The component uses the NavLink component from the react-router-dom library to create the links.
+ * The NavLink component receives a function as a style prop that changes the background and color of the link based on whether it is active.
+ * @returns {React.FC} The rendered component
+ */
 const Menu: React.FC = () => {
   return (
     <nav className="nav_container">

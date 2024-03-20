@@ -6,10 +6,21 @@
 import { FC, useState } from 'react';
 import './EditScenarioHeader.scss';
 
+/**
+ * Interface for the props of the EditScenarioHeader component.
+ * @interface
+ * @property {Function} onSubmit - The function to be called when the form is submitted.
+ */
 interface EditScenarioProps {
   onSubmit: (payload: { anecdote: string, agentNumber: number }) => void;
 }
 
+/**
+ * Interface for the anecdote object.
+ * @interface
+ * @property {string} title - The title of the anecdote.
+ * @property {string} content - The content of the anecdote.
+ */
 export interface Anecdote {
   title: string;
   content: string;
@@ -40,7 +51,13 @@ const anecdotes: Anecdote[] = [{
   content: anecdote3
 }];
 
-
+/**
+ * EditScenarioHeader component is responsible for rendering a form that allows the user to create a scenario.
+ * The form includes a select input for the anecdote and a number input for the agent number.
+ * When the form is submitted, the onSubmit function is called with the selected anecdote and agent number as parameters.
+ * @param {EditScenarioProps} props - The props of the EditScenarioHeader component.
+ * @returns {React.FC} The rendered component
+ */
 const EditScenarioHeader: FC<EditScenarioProps> = ({ onSubmit }) => {
   const [anecdoteIndex, setAnecdoteIndexIndex] = useState<number>(0);
   const [agentNumber, setAgentNumber] = useState(1);

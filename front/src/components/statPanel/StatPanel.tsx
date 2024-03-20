@@ -3,7 +3,10 @@ import "./StatPanel.scss";
 import { useAtom, useSetAtom } from 'jotai'
 import {characterInfos} from "../atoms.ts";
 
-const professionToSkills =
+// Mapping of professions to their respective skills
+type Profession = "Intelligence Analyst" | "Cryptographer" | "Field Operative" | "Cybersecurity Specialist" | "Counterintelligence Officer" | "Undercover Agent";
+
+const professionToSkills: Record<Profession, string[]> =
     {
         "Intelligence Analyst": ["Analytical Thinking", "Data Interpretation", "Information Gathering", "Critical Reasoning", "Report Writing"],
         "Cryptographer": ["Encryption Techniques", "Code Breaking", "Mathematical Prowess", "Problem-Solving", "Pattern Recognition"],
@@ -13,17 +16,24 @@ const professionToSkills =
         "Undercover Agent": ["Identity Assumption", "Social Engineering", "Acting Skills", "Blending In", "Information Extraction"]
     };
 
+/**
+ * StatPanel component is responsible for rendering the character's information and skills.
+ * It uses the jotai state management library to manage the state of the character's information.
+ * @returns {React.FC} The rendered component
+ */
 const StatPanel: React.FC = () => {
-    const [profession, setProfession] = useState('');
-    const [skills, setSkills] = useState<string[]>([]);
-    const [atom] = useAtom(characterInfos);
-    const setInfos = useSetAtom(characterInfos);
+     const [atom] = useAtom(characterInfos); // State for the character's information
+    const setInfos = useSetAtom(characterInfos); // Function to update the character's information
+    const [profession, setProfession] = useState(atom.infos.profession); // State for the selected profession
+    const [skills, setSkills] = useState<string[]>(atom.infos.skills); // State for the selected skills
 
+    // Function to handle changes in the name input field
     const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newName = event.target.value;
         setInfos(prevState => ({ ...prevState, infos: { ...prevState.infos, name: newName }}));
     };
 
+    // Function to handle changes in the profession select field
     const handleProfessionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newProfession = event.target.value;
         setProfession(newProfession);
@@ -37,14 +47,15 @@ const StatPanel: React.FC = () => {
                 skills: newSkills
             }
         }));
-        console.log(atom);
     };
 
+    // Function to handle changes in the clearance input field
     const handleClearanceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newClearance = event.target.value;
         setInfos(prevState => ({ ...prevState, infos: { ...prevState.infos, clearance: newClearance }}));
     };
 
+    // Render the StatPanel component
     return (
         <div className="statPanel-container">
             <div>
@@ -57,11 +68,11 @@ const StatPanel: React.FC = () => {
                 <div className="statPanel-body">
                     <div className="statPanel-body__info">
                         <label className="statPanel-body__info__name">Name :</label>
-                        <input className="statPanel-body__info__value" type="text" onChange={handleNameChange}/>
+                        <input className="statPanel-body__info__value" type="text" onChange={handleNameChange} value={atom.infos.name}/>
                     </div>
                     <div className="statPanel-body__info">
                         <label className="statPanel-body__info__name">Profession :</label>
-                        <select className="statPanel-body__info__value" value={profession} onChange={handleProfessionChange}>
+                        <select className="statPanel-body__info__value" value={profession} onChange={handleProfessionChange} defaultValue={atom.infos.profession}>
                             <option value="">Select a profession</option>
                             {Object.keys(professionToSkills).map(prof => (
                                 <option key={prof} value={prof}>{prof}</option>
@@ -70,7 +81,7 @@ const StatPanel: React.FC = () => {
                     </div>
                     <div className="statPanel-body__info">
                         <label className="statPanel-body__info__name">Clearance :</label>
-                        <input className="statPanel-body__info__value" type="text" onChange={handleClearanceChange}/>
+                        <input className="statPanel-body__info__value" type="text" onChange={handleClearanceChange} value={atom.infos.clearance}/>
                     </div>
                 </div>
             </div>
