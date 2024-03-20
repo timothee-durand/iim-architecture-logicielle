@@ -1,0 +1,13 @@
+.player-list-page {
+  display: flex;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  height: 100%;
+  overflow-y: scroll;
+}

@@ -3,7 +3,7 @@
 // if the scenario is null, it will display a message to the user
 // otherwise it will display the scenario's details
 
-import Scenario from "../../../models/Scenario";
+import Scenario from "../../../types/Scenario.ts";
 import "./EditScenarioBody.scss";
 import { FC } from 'react';
 

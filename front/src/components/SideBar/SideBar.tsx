@@ -8,14 +8,12 @@ import "./SideBar.scss";
 
 interface pagesNameProps {
   pagesName: string;
+  imgUrl:string
 }
 
-const SideBar: React.FC<pagesNameProps> = ({ pagesName }) => {
-  const className =
-    pagesName === "Edit Scenario" ? "side-bar-scenario" : "side-bar-character";
-
+const SideBar: React.FC<pagesNameProps> = ({ pagesName, imgUrl }) => {
   return (
-    <div className={`side-bar ${className}`}>
+    <div className='side-bar' style={{backgroundImage: `url(${imgUrl})`}}>
       <h1>{pagesName}</h1>
     </div>
   );
