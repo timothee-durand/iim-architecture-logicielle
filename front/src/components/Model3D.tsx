@@ -1,60 +1,67 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+/**
+ * ModelViewer component is responsible for rendering a 3D model.
+ * It uses the Three.js library to create a 3D scene, add lighting, load the 3D model, and animate it.
+ * @returns {React.FC} The rendered component
+ */
 const ModelViewer: React.FC = () => {
+  // Reference to the HTML element where the 3D scene will be mounted
   const mountRef = useRef<HTMLDivElement>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null); // Utilise Object3D pour une référence générale
+  // Reference to the loaded 3D model
+  const modelRef = useRef<THREE.Object3D | null>(null);
 
   useEffect(() => {
-    // Crée la scène
+    // Create the 3D scene
     const scene = new THREE.Scene();
-    
-    // Paramètre la caméra
+
+    // Set up the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    // Crée le renderer avec fond transparent
+    // Create the renderer with a transparent background
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    const canvasWidth = 800; // Largeur du canvas
-    const canvasHeight = 600; // Hauteur du canvas
+    const canvasWidth = 800; // Width of the canvas
+    const canvasHeight = 600; // Height of the canvas
     renderer.setSize(canvasWidth, canvasHeight);
     camera.aspect = canvasWidth / canvasHeight;
     camera.updateProjectionMatrix();
-    //set target to the center of the scene
+    // Set the camera to look at the center of the scene
     camera.lookAt(0, 0, 0);
 
-    // Ajoute le renderer au DOM
+    // Add the renderer to the DOM
     mountRef.current?.appendChild(renderer.domElement);
 
-    // Ajoute de l'éclairage
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75); 
+    // Add lighting to the scene
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
     scene.add(ambientLight);
-    
+
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(0, 1, 3);
     scene.add(directionalLight);
 
-    // Charge le modèle 3D
+    // Load the 3D model
     const loader = new GLTFLoader();
     loader.load(
-      'scene.gltf',
-      (gltf) => {
-        modelRef.current = gltf.scene; // Stocke une référence au modèle chargé
-        scene.add(gltf.scene);
-      },
-      undefined,
-      (error) => {
-        console.error('An error happened:', error);
-      }
+        'scene.gltf',
+        (gltf) => {
+          modelRef.current = gltf.scene; // Store a reference to the loaded model
+          scene.add(gltf.scene);
+        },
+        undefined,
+        (error) => {
+          console.error('An error happened:', error);
+        }
     );
 
-    // Positionne la caméra
+    // Position the camera
     camera.position.set(0.5, 1, 1.5);
 
-    // Boucle d'animation
+    // Animation loop
     const animate = function () {
       requestAnimationFrame(animate);
 
-      // Fait tourner le modèle sur lui-même autour de l'axe Y
+      // Rotate the model around the Y-axis
       if (modelRef.current) {
         modelRef.current.rotation.y += 0.001;
       }
@@ -64,11 +71,13 @@ const ModelViewer: React.FC = () => {
 
     animate();
 
+    // Clean up on component unmount
     return () => {
       mountRef.current?.removeChild(renderer.domElement);
     };
   }, []);
 
+  // Render a div that will contain the 3D scene
   return <div ref={mountRef} style={{display:"flex", justifyItems: "center", alignItems:"center"}}/>;
 };
 

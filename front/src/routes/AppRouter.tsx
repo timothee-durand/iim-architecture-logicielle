@@ -6,20 +6,28 @@ import Menu from '../components/menu/Menu';
 import PlayerSelection from '../pages/PlayerSelection';
 import EditScenarioPage from '../pages/EditScenarioPage';
 
-const AppContent: React.FC = () => {
-  const location = useLocation(); // Obtenez le chemin actuel
 
-  return (
-    <>
-      {location.pathname !== "/" && <Menu />}
-      {/* Non affichage du menu dans l'accueil */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/scenario" element={<EditScenarioPage />} />
-        <Route path="/player" element={<PlayerSelection />} />
-      </Routes>
-    </>
-  );
+/**
+ * Renders the application content.
+ * @returns {React.FC} The rendered component
+ */
+const AppContent: React.FC = () => {
+    const location = useLocation(); // Get the current path
+
+    /**
+     * Render the application routes and the menu.
+     * The menu is not displayed on the home page.
+     */
+    return (
+        <>
+            {location.pathname !== "/" && <Menu />}
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/scenario" element={<EditScenarioPage />} />
+                <Route path="/player" element={<PlayerSelection />} />
+            </Routes>
+        </>
+    );
 };
 
 const AppRouter: React.FC = () => (
