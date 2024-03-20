@@ -1,5 +1,5 @@
 .nav_container {
-  background-color: #CE362B;
+  background-color: #751313;
   width: 100%;
   padding: 0px 50px;
   font-family: 'Bebas Neue';
@@ -92,8 +92,14 @@ a:hover {
 
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+html {
+  max-width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
