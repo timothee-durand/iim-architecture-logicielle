@@ -16,7 +16,7 @@ const SideBar: React.FC<pagesNameProps> = ({ pagesName }) => {
 
   return (
     <div className={`side-bar ${className}`}>
-      <h2>{pagesName}</h2>
+      <h1>{pagesName}</h1>
     </div>
   );
 };
