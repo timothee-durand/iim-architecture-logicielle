@@ -5,13 +5,14 @@
 
 import Scenario from "../../../models/Scenario";
 import "./EditScenarioBody.scss";
+import { FC } from 'react';
 
 // we will use the Scenario model to display the scenario's details
 interface GeneratedScenarioProps {
   theScenario: Scenario | null;
 }
 
-const EditScenarioBody: React.FC<GeneratedScenarioProps> = ({
+const EditScenarioBody: FC<GeneratedScenarioProps> = ({
   theScenario,
 }) => {
   if (!theScenario) {
@@ -30,7 +31,11 @@ const EditScenarioBody: React.FC<GeneratedScenarioProps> = ({
         </div>
         <div>
           <h3>Objectives:</h3>
-          <p>{theScenario.objectives ?? ""}</p>
+          <ul>
+            {theScenario.objectives.map((objective, index) => (
+              <li key={index}>{objective}</li>
+            ))}
+          </ul>
         </div>
         <div>
           <h3>Stakes:</h3>
@@ -38,11 +43,19 @@ const EditScenarioBody: React.FC<GeneratedScenarioProps> = ({
         </div>
         <div>
           <h3>Enemies:</h3>
-          <p>{theScenario.enemies.map((enemy) => enemy.name).join(", ")}</p>
+          <ul>
+            {theScenario.enemies.map((enemy) => (
+              <li key={enemy.name}>{enemy.name}: {enemy.description}</li>
+            ))}
+          </ul>
         </div>
         <div>
           <h3>Allies:</h3>
-          <p>{theScenario.allies.map((ally) => ally.name).join(", ")}</p>
+          <ul>
+            {theScenario.allies.map((ally) => (
+              <li key={ally.name}>{ally.name}: {ally.description}</li>
+            ))}
+          </ul>
         </div>
         <div>
           <h3>Resources:</h3>
@@ -58,7 +71,11 @@ const EditScenarioBody: React.FC<GeneratedScenarioProps> = ({
         </div>
         <div>
           <h3>Stages:</h3>
-          <p>{theScenario.stages.join(", ")}</p>
+          <ul>
+            {theScenario.stages.map((stage, index) => (
+              <li key={index}>{stage}</li>
+            ))}
+          </ul>
         </div>
       </div>
     );

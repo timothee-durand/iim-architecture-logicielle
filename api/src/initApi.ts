@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { charactersApi } from './characters';
 import { sentinelleApi } from './sentinelle';
+import cors from 'cors';
 
 
 /**
@@ -21,6 +22,7 @@ export async function initApi() {
   // Log all requests
   app.use(logRequests);
 
+  app.use(cors())
   // Parse JSON bodies
   app.use(express.json());
 
