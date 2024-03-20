@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Menu from '../components/menu/Menu';
 import PlayerSelection from '../pages/PlayerSelection/PlayerSelection.tsx';
 import EditScenarioPage from '../pages/EditScenarioPage';
+import { ScenarioHistoryList } from '../components/ScenarioHistory';
 import { PlayerList } from '../pages/PlayerList/PlayerList.tsx';
 
 const AppContent: React.FC = () => {
@@ -17,6 +18,7 @@ const AppContent: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/scenario" element={<EditScenarioPage />} />
+        <Route path="/history" element={<ScenarioHistoryList />} />
         <Route path="/player" element={<PlayerSelection />} />
         <Route path="/players" element={<PlayerList />} />
       </Routes>

@@ -4,13 +4,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -65vh;
-
-  &-scenario {
-    background-image: url("../../assets/CardsHP3.jpeg");
-  }
-  &-character {
-    background-image: url("../../assets/CardsHP1.jpeg");
-  }
+  width: 160px;
+  flex-shrink: 0;
 
   h1 {
     transform: rotate(-90deg) translate(-45%, -300px);

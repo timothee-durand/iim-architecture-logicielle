@@ -8,6 +8,7 @@ import { useState } from "react";
 import Scenario from "../../types/Scenario.ts";
 import { api } from "../../services/api.ts";
 import SideBar from "../SideBar/SideBar";
+import SidebarImg from "../../assets/CardsHP1.jpeg"
 
 function EditScenario() {
   const [scenario, setScenario] = useState<Scenario | null>(null);
@@ -37,7 +38,7 @@ function EditScenario() {
   return (
     <div className="edit-scenario-container">
       <div className="side-bar-container">
-        <SideBar pagesName="Edit Scenario" />
+        <SideBar pagesName="Edit Scenario" imgUrl={SidebarImg}/>
       </div>
       <div className="edit-scenario-main">
         <EditScenarioHeader onSubmit={handleGenerate} />

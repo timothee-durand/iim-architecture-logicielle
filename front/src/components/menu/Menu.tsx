@@ -38,6 +38,14 @@ const Menu: React.FC = () => {
             Scenario Creation
           </NavLink>
         </li>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/history" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            Scenario History
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

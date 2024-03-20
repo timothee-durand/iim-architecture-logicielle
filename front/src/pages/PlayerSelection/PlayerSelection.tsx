@@ -9,7 +9,7 @@ import Model3D from '../../components/Model3D.tsx';
 import SideBar from '../../components/SideBar/SideBar.tsx';
 import { PlayerCreateCta } from './PlayerCreateCta/PlayerCreateCta.tsx';
 
-
+import SidebarImg from "../../assets/CardsHP3.jpeg"
 const PlayerSelection: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const handleNextStep = async () => {
@@ -35,7 +35,7 @@ const PlayerSelection: React.FC = () => {
   return (
     <div className="playerSelection-container">
       <div className="side-bar-container">
-        <SideBar pagesName="Player Creation" />
+        <SideBar pagesName="Player Creation" imgUrl={SidebarImg} />
       </div>
       <ProgressCreation currentStep={currentStep} />
       <ComponentToRender />
