@@ -6,6 +6,7 @@ import StatDetail from "../components/statDetail/StatDetail.tsx";
 import StatPanel from "../components/statPanel/StatPanel.tsx";
 import RecapPanel from "../components/recapPanel/RecapPanel.tsx";
 import Model3D from "../components/Model3D.tsx";
+import SideBar from "../components/SideBar/SideBar.tsx";
 
 
 
@@ -31,10 +32,13 @@ const PlayerSelection: React.FC = () => {
 
     return (
         <div className="playerSelection-container">
-            <ProgressCreation currentStep={currentStep} />
-            <ComponentToRender />
-            {currentStep !== 3 && <StatDetail />}
-            <Model3D />
+            <div className="side-bar-container">
+                <SideBar pagesName="Player Creation"/>
+            </div>
+            <ProgressCreation currentStep={currentStep}/>
+            <ComponentToRender/>
+            {currentStep !== 3 && <StatDetail/>}
+            <Model3D/>
             <button className="playerSelection__nextButton" onClick={handleNextStep}>Next step</button>
             <button className="playerSelection__prevButton" onClick={handlePrevStep}>Prev step</button>
         </div>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RightArrow from '../assets/RightArrow.png'; // Assurez-vous que le chemin est correct
-import Model3D from '../components/Model3D';
 
-import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   return (
