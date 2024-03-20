@@ -1,0 +1,71 @@
+.recapPanel {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: #FFFFFF;
+    font-family: "Bebas Neue";
+    padding: 2rem 3rem;
+
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &__icon {
+      width: 52px;
+      height: 52px;
+    }
+    &-count {
+      display: flex;
+      flex-direction: column;
+
+      &__name, &__counter {
+        margin: 0;
+        line-height: 1.7rem;
+      }
+
+      &__name {
+        font-size: 2rem;
+      }
+
+      &__counter {
+        font-size: 1.5rem;
+      }
+
+    }
+  }
+
+  &-body {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    &__info {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    p.statPanel-body__info__value {
+      margin: 0;
+      color: red;
+      font-size: 1.5rem;
+
+
+    }
+    label {
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.adjectivesCounter {
+  font-family: "Bebas Neue" ;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0px;
+  color: #FFFFFF;
+}

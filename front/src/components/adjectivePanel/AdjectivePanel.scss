@@ -1,0 +1,16 @@
+.adjectivePanel {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    justify-content: start;
+    gap: 1rem;
+  }
+}
+
+.adjectivesCounter {
+  font-family: "Bebas Neue" ;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0px;
+}

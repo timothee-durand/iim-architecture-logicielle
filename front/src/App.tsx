@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 
 
 const App: React.FC = () => {
-
+{/* fonction pour l'effet matrix */}
   useEffect(() => {
       var canvas = document.getElementById("c") as HTMLCanvasElement;
       if (!canvas) {
@@ -50,6 +50,7 @@ const App: React.FC = () => {
   return (
     <>
       <AppRouter/>
+      {/* canvas pour l'effet matrix */}
       <canvas id="c"></canvas>
     </>
   );

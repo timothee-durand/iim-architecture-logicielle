@@ -1,0 +1,59 @@
+.statDetail{
+  &-container{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 50px;
+    bottom: 125px;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      font-family: "Bebas Neue";
+      position: absolute;
+    }
+
+    .p-count {
+      top: 0;
+      left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .m-count {
+      bottom: 0;
+      left: 20%;
+      transform: translateX(-50%);
+    }
+
+    .s-count {
+      bottom: 0;
+      right: 20%;
+      transform: translateX(-50%);
+    }
+
+    .mp-count {
+      top: 25%;
+      right: 66%;
+
+    }
+
+    .ps-count {
+      top: 25%;
+      left: 66%;
+    }
+
+    .sm-count {
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .pms-count {
+      top: 33%;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.playerSelection {
+  &-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.52);
+    height: calc(100vh - 66px);
+  }
+  &__nextButton, &__prevButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    background-color: #751313;
+    color: white;
+    border-radius: 0;
+    font-family: "Bebas Neue";
+  }
+
+  &__prevButton {
+    right: 100px;
+    bottom: 0;
+  }
+}

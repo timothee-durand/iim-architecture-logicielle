@@ -1,0 +1,57 @@
+.progress-bar {
+  width: 64px;
+  max-width: 65vh;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+
+  &__section {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(0px 7px 2px rgba(0, 0, 0, 0.5));
+    position: relative;
+
+    &--first {
+      z-index: 3;
+    }
+
+    &--second {
+      z-index: 2;
+      margin-top: -50px;
+    }
+
+    &--third {
+      z-index: 1;
+      margin-top: -50px;
+    }
+
+
+    span {
+      height: 100%;
+      width: 100%;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
+      background-color: #303030;
+      transition: width 0.5s;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      display: block;
+    }
+
+    &.active span {
+      animation: fill 1s ease-in-out forwards;
+    }
+
+    @keyframes fill {
+      0% {
+        background: linear-gradient(to bottom, #751313 50%, #303030 50%);
+        background-size: 100% 200%;
+        background-position: 0% 100%;
+      }
+      100% {
+        background: linear-gradient(to bottom, #751313 50%, #303030 50%);
+        background-color: #751313;
+        background-size: 100% 200%;
+        background-position: 0% 0%;
+      }
+    }
+  }
+}

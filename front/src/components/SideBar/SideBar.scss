@@ -1,9 +1,5 @@
 .side-bar {
-  position: fixed;
-  top: 14vh;
-  left: 0;
   height: 100%;
-  width: 14%;
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,14 +13,17 @@
   }
 
   h1 {
-    transform: rotate(-90deg);
-    width: 177%;
-    height: 34%;
+    transform: rotate(-90deg) translate(50%, -250%);
+    white-space: nowrap;
+    width: 50%;
+    break-inside: avoid;
     font-size: 76px;
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: -107vh;
-    right: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFFFFF;
+    font-family: "Bebas Neue";
   }
 }
