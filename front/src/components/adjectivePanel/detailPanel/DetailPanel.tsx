@@ -2,7 +2,7 @@
 import React from 'react';
 import "./DetailPanel.scss"
 import { useAtom, useSetAtom } from 'jotai'
-import { adjectivesAtom } from '../../atoms';
+import { characterInfos } from '../../atoms';
 
 interface DetailPanelProps {
     name: string;
@@ -12,11 +12,11 @@ interface DetailPanelProps {
 
 const DetailPanel: React.FC<DetailPanelProps> = ({ name, adjectiveList, svgPath }) => {    const [selectedAdjectives, setSelectedAdjectives] = React.useState<string[]>([]);
     const [counter, setCounter] = React.useState<number>(0);
-    const setAdjectives = useSetAtom(adjectivesAtom);
-    const [adjectives] = useAtom(adjectivesAtom);
+    const setAdjectives = useSetAtom(characterInfos);
+    const [atom] = useAtom(characterInfos);
     const handleAdjectiveClick = (adjective: string) => {
         let newSelectedAdjectives = [...selectedAdjectives];
-        const totalAdjectives = adjectives.PHYSICAL.length + adjectives.MENTAL.length + adjectives.SOCIAL.length;
+        const totalAdjectives = atom.adjectives.PHYSICAL.length + atom.adjectives.MENTAL.length + atom.adjectives.SOCIAL.length;
 
         if (selectedAdjectives.includes(adjective)) {
             newSelectedAdjectives = selectedAdjectives.filter(a => a !== adjective);
@@ -26,7 +26,7 @@ const DetailPanel: React.FC<DetailPanelProps> = ({ name, adjectiveList, svgPath 
             setCounter(counter + 1);
         }
         setSelectedAdjectives(newSelectedAdjectives);
-        setAdjectives(prevState => ({ ...prevState, [name]: newSelectedAdjectives }));
+        setAdjectives(prevState => ({ ...prevState, adjectives: { ...prevState.adjectives, [name]: newSelectedAdjectives }}));
 
     };
 

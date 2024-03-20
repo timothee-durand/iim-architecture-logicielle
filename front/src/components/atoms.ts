@@ -1,9 +1,18 @@
 import { atom } from 'jotai';
 
-export const adjectivesAtom =atom(
+export const characterInfos =atom(
     {
-        PHYSICAL: [],
-        MENTAL: [],
-        SOCIAL: []
+        adjectives: {
+            PHYSICAL: [],
+            MENTAL: [],
+            SOCIAL: []
+        },
+        infos: {
+            name: "",
+            profession: "",
+            clearance: "",
+            skills: [],
+        }
+
     }
 )

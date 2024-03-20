@@ -3,6 +3,8 @@ import ProgressCreation from "../components/progressCreation/ProgressCreation.ts
 import AdjectivePanel from "../components/adjectivePanel/AdjectivePanel.tsx";
 import "./PlayerSelection.scss";
 import StatDetail from "../components/statDetail/StatDetail.tsx";
+import StatPanel from "../components/statPanel/StatPanel.tsx";
+import RecapPanel from "../components/recapPanel/RecapPanel.tsx";
 
 
 
@@ -13,22 +15,26 @@ const PlayerSelection: React.FC = () => {
     const handleNextStep = () => {
         setCurrentStep(currentStep + 1);
     };
+    const handlePrevStep = () => {
+        setCurrentStep(currentStep - 1);
+    };
 
     let ComponentToRender;
     if (currentStep === 1) {
         ComponentToRender = AdjectivePanel;
     } else if (currentStep === 2) {
-        ComponentToRender = AdjectivePanel;
+        ComponentToRender = StatPanel;
     } else {
-        ComponentToRender = AdjectivePanel;
+        ComponentToRender = RecapPanel;
     }
 
     return (
         <div className="playerSelection-container">
             <ProgressCreation currentStep={currentStep} />
             <ComponentToRender />
-            <StatDetail />
+            {currentStep !== 3 && <StatDetail />}
             <button className="playerSelection__nextButton" onClick={handleNextStep}>Next step</button>
+            <button className="playerSelection__prevButton" onClick={handlePrevStep}>Prev step</button>
         </div>
     );
 };

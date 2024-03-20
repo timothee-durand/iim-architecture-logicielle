@@ -1,0 +1,82 @@
+.statPanel {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: #FFFFFF;
+    font-family: "Bebas Neue";
+    padding: 2rem 3rem;
+
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &__icon {
+      width: 52px;
+      height: 52px;
+    }
+    &-count {
+      display: flex;
+      flex-direction: column;
+
+      &__name, &__counter {
+        margin: 0;
+        line-height: 1.7rem;
+      }
+
+      &__name {
+        font-size: 2rem;
+      }
+
+      &__counter {
+        font-size: 1.5rem;
+      }
+
+    }
+  }
+
+  &-body {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    &__info {
+      display: flex;
+        gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select {
+      border-radius: 0;
+      border: 2px solid #a72525;
+      background-color: transparent;
+      height: 35px;
+      color: white;
+    }
+    label {
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+
+
+
+    input {
+      border-radius: 0;
+      border: 2px solid #a72525;
+      background-color: transparent;
+      height: 35px;
+      color: white;
+    }
+  }
+}
+
+.--skills {
+  margin-top: 30px;
+}
