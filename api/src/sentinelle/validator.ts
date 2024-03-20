@@ -23,7 +23,7 @@ const character = z.object({
 export const briefValidator = z.object({
   title: z.string(), // title of the brief
   context: z.string(), // context of the brief
-  objectives: z.string(), // objectives of the brief
+  objectives: z.array(z.string()), // objectives of the brief
   stakes: z.string(), // stakes of the brief
   enemies: z.array(character), // enemies of the brief
   allies: z.array(character), // allies of the brief

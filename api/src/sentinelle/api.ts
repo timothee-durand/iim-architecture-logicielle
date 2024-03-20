@@ -14,6 +14,7 @@ sentinelleApi.post('/briefs', async (req, res) => {
   try {
     const payload = generateBriefRequestValidator.parse(req.body)
     const brief = await generateBrief(payload)
+    console.log('brief', brief);
     await saveBriefHistory({
       news: payload.news,
       brief: briefValidator.parse(JSON.parse(brief))
