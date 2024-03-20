@@ -23,7 +23,7 @@ const EditScenarioBody: FC<GeneratedScenarioProps> = ({
     );
   } else {
     return (
-      <div className="scenarioBody">
+      <div className="scenario-body">
         <h2>Title: {theScenario.title ?? ""}</h2>
         <div>
           <h3>Context:</h3>
