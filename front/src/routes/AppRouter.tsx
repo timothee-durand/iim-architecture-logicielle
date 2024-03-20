@@ -3,8 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from '../pages/Home';
 import Menu from '../components/menu/Menu';
-import PlayerSelection from '../pages/PlayerSelection';
+import PlayerSelection from '../pages/PlayerSelection/PlayerSelection.tsx';
 import EditScenarioPage from '../pages/EditScenarioPage';
+import { PlayerList } from '../pages/PlayerList/PlayerList.tsx';
 
 const AppContent: React.FC = () => {
   const location = useLocation(); // Obtenez le chemin actuel
@@ -17,6 +18,7 @@ const AppContent: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/scenario" element={<EditScenarioPage />} />
         <Route path="/player" element={<PlayerSelection />} />
+        <Route path="/players" element={<PlayerList />} />
       </Routes>
     </>
   );

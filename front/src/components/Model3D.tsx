@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect, FC } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-const ModelViewer: React.FC = () => {
+const ModelViewer: FC<{width?:number, height?:number}> = ({height = 600, width = 800}) => {
   const mountRef = useRef<HTMLDivElement>(null);
   const modelRef = useRef<THREE.Object3D | null>(null); // Utilise Object3D pour une référence générale
 
@@ -14,8 +14,8 @@ const ModelViewer: React.FC = () => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     // Crée le renderer avec fond transparent
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    const canvasWidth = 800; // Largeur du canvas
-    const canvasHeight = 600; // Hauteur du canvas
+    const canvasWidth = width; // Largeur du canvas
+    const canvasHeight = height; // Hauteur du canvas
     renderer.setSize(canvasWidth, canvasHeight);
     camera.aspect = canvasWidth / canvasHeight;
     camera.updateProjectionMatrix();
@@ -69,7 +69,7 @@ const ModelViewer: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{display:"flex", justifyItems: "center", alignItems:"center"}}/>;
+  return <div ref={mountRef} style={{pointerEvents:'none'}}/>;
 };
 
 export default ModelViewer;

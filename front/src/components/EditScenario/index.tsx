@@ -5,7 +5,7 @@ import EditScenarioBody from "./EditScenarioBody";
 import EditScenarioHeader from "./EditScenarioHeader";
 import "./EditScenario.scss";
 import { useState } from "react";
-import Scenario from "../../models/Scenario";
+import Scenario from "../../types/Scenario.ts";
 import { api } from "../../services/api.ts";
 import SideBar from "../SideBar/SideBar";
 
