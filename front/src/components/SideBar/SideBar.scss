@@ -13,15 +13,16 @@
   }
 
   h1 {
-    transform: rotate(-90deg) translate(50%, -250%);
+    transform: rotate(-90deg) translate(-45%, -300px);
     white-space: nowrap;
-    width: 50%;
+    width: calc(100vh - 66px);
+    height: 160px;
     break-inside: avoid;
     font-size: 76px;
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     color: #FFFFFF;
     font-family: "Bebas Neue";
