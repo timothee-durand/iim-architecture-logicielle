@@ -1,14 +1,20 @@
-.sidebar {
+.side-bar {
   position: fixed;
   top: 14vh;
   left: 0;
   height: 100%;
   width: 14%;
-  background-image: url("../../assets/CardsHP1.jpeg");
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -65vh;
+
+  &-scenario {
+    background-image: url("../../assets/CardsHP3.jpeg");
+  }
+  &-character {
+    background-image: url("../../assets/CardsHP1.jpeg");
+  }
 
   h1 {
     transform: rotate(-90deg);

@@ -20,8 +20,8 @@ function EditScenario() {
         <EditScenarioHeader onScenarioSubmit={setScenario} />
         <EditScenarioBody theScenario={scenario} />
       </div>
-      <div>
-        <h2>Go with this scenario</h2>
+      <div className="start-scenario">
+        <h2>{scenario ? "Go with this scenario" : "You have to generate scenario"}</h2>
         <p>{scenario?.title}</p>
       </div>
     </div>

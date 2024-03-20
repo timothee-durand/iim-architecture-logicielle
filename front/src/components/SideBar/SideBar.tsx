@@ -1,20 +1,24 @@
 // this component is a sidebar and will display the page's name
-// which will be passed as a prop 
+// which will be passed as a prop
+// should add a classname depending onthe page's name
+// if Edit Scenario, the classname should be side-bar-scenario
+// if Edit Character, the classname should be side-bar-character
 
-import './SideBar.scss';
+import "./SideBar.scss";
 
 interface pagesNameProps {
-    pagesName: string;
+  pagesName: string;
 }
 
-const SideBar: React.FC<pagesNameProps> = ({
-    pagesName,
-  }) => {
-    return (
-        <div className="sidebar">
-            <h1>{pagesName}</h1>
-        </div>
-    );
-}
+const SideBar: React.FC<pagesNameProps> = ({ pagesName }) => {
+  const className =
+    pagesName === "Edit Scenario" ? "side-bar-scenario" : "side-bar-character";
+
+  return (
+    <div className={`side-bar ${className}`}>
+      <h2>{pagesName}</h2>
+    </div>
+  );
+};
 
 export default SideBar;
