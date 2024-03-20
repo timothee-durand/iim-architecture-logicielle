@@ -1,8 +1,12 @@
 .edit-scenario-container {
+  height: 86vh;
   background-color: #000;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 16px;
+}
+
+.edit-scenario-main{
+  width: 75%;
 }
