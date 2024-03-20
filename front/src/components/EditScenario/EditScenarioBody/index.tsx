@@ -1,5 +1,9 @@
-// EditScenarioBody.tsx
-import Scenario from "../../../models/Scenario";
+// this component will display the scenario's details
+// it will take the scenario as a prop
+// if the scenario is null, it will display a message to the user
+// otherwise it will display the scenario's details
+
+import Scenario from "../../../types/Scenario.ts";
 import "./EditScenarioBody.scss";
 import { FC } from 'react';
 

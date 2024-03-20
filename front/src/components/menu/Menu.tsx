@@ -11,25 +11,50 @@ import { NavLink } from 'react-router-dom';
  */
 const Menu: React.FC = () => {
   return (
-      <nav className="nav_container">
-        <ul style={{ listStyleType: 'none', padding: 0, margin : 0, }}>
-          <li style={{ display: 'inline-block', marginRight: 10 }}>
-            <NavLink to="/" style={({ isActive }) => ({ background: isActive ? 'white' : '', color: isActive ? '#751313' : 'white' })}>
-              Home
-            </NavLink>
-          </li>
-          <li style={{ display: 'inline-block', marginRight: 10 }}>
-            <NavLink to="/player" style={({ isActive }) => ({ background: isActive ? 'white' : '', color: isActive ? '#751313' : 'white' })}>
-              Player Creation
-            </NavLink>
-          </li>
-          <li style={{ display: 'inline-block', marginRight: 10 }}>
-            <NavLink to="/scenario" style={({ isActive }) => ({ background: isActive ? 'white' : '', color: isActive ? '#751313' : 'white' })}>
-              Scenario Creation
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+    <nav className="nav_container">
+      <ul style={{ listStyleType: 'none', padding: 0, margin: 0, }}>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            Accueil
+          </NavLink>
+        </li>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/player" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            player Creation
+          </NavLink>
+        </li>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/players" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            Player list
+          </NavLink>
+        </li>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/scenario" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            Scenario Creation
+          </NavLink>
+        </li>
+        <li style={{ display: 'inline-block', marginRight: 10 }}>
+          <NavLink to="/history" style={({ isActive }) => ({
+            background: isActive ? 'white' : '',
+            color: isActive ? '#751313' : 'white'
+          })}>
+            Scenario History
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

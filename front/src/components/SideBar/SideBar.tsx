@@ -8,8 +8,10 @@ import "./SideBar.scss";
  */
 interface pagesNameProps {
   pagesName: string;
+  imgUrl:string
 }
 
+const SideBar: React.FC<pagesNameProps> = ({ pagesName, imgUrl }) => {
 /**
  * SideBar component is responsible for rendering a sidebar that displays the name of the page.
  * The page's name is passed as a prop.
@@ -19,16 +21,11 @@ interface pagesNameProps {
  * @param {pagesNameProps} props - The props of the SideBar component.
  * @returns {React.FC} The rendered component
  */
-const SideBar: React.FC<pagesNameProps> = ({ pagesName }) => {
-  // Determine the classname based on the page's name
-  const className =
-      pagesName === "Edit Scenario" ? "side-bar-scenario" : "side-bar-character";
-
   // Render the SideBar component
   return (
-      <div className={`side-bar ${className}`}>
-        <h1>{pagesName}</h1>
-      </div>
+    <div className='side-bar' style={{backgroundImage: `url(${imgUrl})`}}>
+      <h1>{pagesName}</h1>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ interface Player {
     physical: string[]; // The physical attributes of the player
     mental: string[]; // The mental attributes of the player
     social: string[]; // The social attributes of the player
+    id: number;
 }
 
 // Export the Player interface as the default export

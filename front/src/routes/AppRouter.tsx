@@ -3,8 +3,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from '../pages/Home';
 import Menu from '../components/menu/Menu';
-import PlayerSelection from '../pages/PlayerSelection';
+import PlayerSelection from '../pages/PlayerSelection/PlayerSelection.tsx';
 import EditScenarioPage from '../pages/EditScenarioPage';
+import { ScenarioHistoryList } from '../components/ScenarioHistory';
+import { PlayerList } from '../pages/PlayerList/PlayerList.tsx';
 
 
 /**
@@ -18,16 +20,19 @@ const AppContent: React.FC = () => {
      * Render the application routes and the menu.
      * The menu is not displayed on the home page.
      */
-    return (
-        <>
-            {location.pathname !== "/" && <Menu />}
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/scenario" element={<EditScenarioPage />} />
-                <Route path="/player" element={<PlayerSelection />} />
-            </Routes>
-        </>
-    );
+  return (
+    <>
+      {location.pathname !== "/" && <Menu />}
+      {/* Non affichage du menu dans l'accueil */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/scenario" element={<EditScenarioPage />} />
+        <Route path="/history" element={<ScenarioHistoryList />} />
+        <Route path="/player" element={<PlayerSelection />} />
+        <Route path="/players" element={<PlayerList />} />
+      </Routes>
+    </>
+  );
 };
 
 const AppRouter: React.FC = () => (
