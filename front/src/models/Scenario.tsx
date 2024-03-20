@@ -6,7 +6,7 @@ interface Schema {
 interface Scenario {
   title: string;
   context: string;
-  objectives: string;
+  objectives: string[];
   stakes: string;
   enemies: Schema[];
   allies: Schema[];
