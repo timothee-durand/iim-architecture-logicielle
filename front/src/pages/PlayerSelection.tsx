@@ -31,7 +31,7 @@ const PlayerSelection: React.FC = () => {
     }
 
     return (
-        <div className="playerSelection-container">
+        <div className="playerSelection-container ">
             <div className="side-bar-container">
                 <SideBar pagesName="Player Creation"/>
             </div>

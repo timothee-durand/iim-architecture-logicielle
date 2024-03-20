@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     // Utilisez un fragment React pour englober tous vos éléments
     <>
-      <div className='HPcontainer'>
+      <div className='HPcontainer '>
         <div className='cardcontainer'>
           <Link to="/player" className='cards card1'>
             <div className='cardcontainercontent'>

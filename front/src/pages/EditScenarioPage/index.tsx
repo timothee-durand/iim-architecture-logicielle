@@ -5,7 +5,7 @@ import EditScenario from "../../components/EditScenario";
 function EditScenarioPage() {
 
   return (
-    <div className="edit-scenario-page">
+    <div className="edit-scenario-page ">
       <EditScenario />
     </div>
   );

@@ -5,6 +5,7 @@
   font-family: 'Bebas Neue';
   font-size: 24px;
   letter-spacing: 1px;
+  z-index: 1000;
 }
 
 canvas {
@@ -81,6 +82,7 @@ nav ul li a {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 :root {
@@ -212,4 +214,26 @@ button:focus-visible {
 
 .read-the-docs {
   color: #888;
+}
+
+.fade-initial {
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
